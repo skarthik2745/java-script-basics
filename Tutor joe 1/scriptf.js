@@ -65,5 +65,121 @@ let q="5"
 let t=q.padStart(5, "0");
 console.log("Padded String:", t); // Padded String: 00005   
 
-let u=q.padEnd(5, "0");
-console.log("Padded String:", u); // Padded String: 50000
+let u=q.padEnd(5, "$");
+console.log("Padded String:", u); // Padded String: 5$$$$
+
+// fromCharCode
+let charCode = 65; // ASCII code for 'A'
+let char = String.fromCharCode(charCode);
+console.log("Character from Code 65:", char); // Character from Code 65: A
+
+// functions
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+console.log(greet("Alice")); // Hello, Alice!
+
+function add(a, b) {
+    return a + b;
+}
+console.log(add(5, 10)); // 15
+
+function multiply(a, b) {
+    console.log(a * b);
+}
+multiply(5, 10); // 50
+
+// arbitrary number of arguments
+function sum()
+{
+    let total = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+    }
+    return total;   
+
+}
+console.log("Sum of 1, 2, 3:", sum(1, 2, 3)); // Sum of 1, 2, 3: 6
+console.log("Sum of 1, 2, 3, 4, 5:", sum(1, 2, 3, 4, 5)); // Sum of 1, 2, 3, 4, 5: 15
+console.log("Sum of 1, 2, 3, 4, 5, 6:", sum(1, 2, 3, 4, 5, 6)); // Sum of 1, 2, 3, 4, 5, 6: 21
+
+function sum(...args) {
+    let total = 0;
+    for (let arg of args) {
+        total += arg;
+    }
+    return total;
+}
+console.log("Sum of 1, 2, 3:", sum(1, 2, 3)); // Sum of 1, 2, 3: 6
+console.log("Sum of 1, 2, 3, 4, 5   :", sum(1, 2, 3, 4, 5)); // Sum of 1, 2, 3, 4, 5: 15
+console.log("Sum of 1, 2, 3, 4, 5, 6:", sum(1, 2, 3, 4, 5, 6)); // Sum of 1, 2, 3, 4, 5, 6: 21
+
+
+function multiply(...args) {
+    let result = 1;
+    for (let arg of args) {
+        result *= arg;
+    }
+    return result;
+}   
+console.log("Multiply 2, 3:", multiply(2, 3)); // Multiply 2, 3: 6
+console.log("Multiply 2, 3, 4:", multiply(2, 3, 4)); // Multiply 2, 3, 4: 24
+console.log("Multiply 2, 3, 4, 5:", multiply(2, 3, 4, 5)); // Multiply 2, 3, 4, 5: 120
+
+// func as expression
+let square = function(x) {
+    return x * x;
+};  
+console.log("Square of 5:", square(5)); // Square of 5: 25
+let cube = function(x) {
+    return x * x * x;
+};
+console.log("Cube of 3:", cube(3)); // Cube of 3: 27
+
+// arrow functions
+let addArrow = (a, b) => a + b;
+console.log("Arrow Function Add 5 + 10:", addArrow(5, 10)); // Arrow Function Add 5 + 10: 15
+let multiplyArrow = (a, b) => a * b;
+console.log("Arrow Function Multiply 5 * 10:", multiplyArrow(5, 10)); // Arrow Function Multiply 5 * 10: 50
+
+
+// arrow function with map()
+let numbers = [1, 2, 3, 4, 5];
+let squares = numbers.map(num => num * num);    
+console.log("Squares of [1, 2, 3, 4, 5]:", squares); // Squares of [1, 2, 3, 4, 5]: [1, 4, 9, 16, 25]
+
+// arrow function with filter()
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log("Even Numbers from [1, 2, 3, 4, 5]:", evenNumbers); // Even Numbers from [1, 2, 3, 4, 5]: [2, 4]
+
+let o=['apple', 'banana', 'cherry','orange'];
+let filteredFruits = o.filter(fruit => fruit.startsWith('b'));
+console.log("Fruits starting with 'b':", filteredFruits); // Fruits starting with 'b': ['banana']
+
+let i = ["apple", "banana", "cherry", "orange"];
+let filteredFruit = i.filter(fruit => fruit.length > 5);
+console.log("Fruits with more than 5 characters:", filteredFruit); // Fruits with more than 5 characters: ['banana', 'cherry', 'orange']
+
+
+
+// arrow function with reduce()
+let sumOfNumbers = numbers.reduce((accumulator, current) => accumulator + current, 0);
+console.log("Sum of [1, 2, 3, 4, 5]:", sumOfNumbers); // Sum of [1, 2, 3, 4, 5]: 15 
+
+let productOfNumbers = numbers.reduce((accumulator, current) => accumulator * current, 1);
+console.log("Product of [1, 2, 3, 4, 5]:", productOfNumbers); // Product of [1, 2, 3, 4, 5]: 120
+
+// arrow function with closure
+function createCounter() {
+    let count = 0;
+    return () => {
+        count++;
+        return count;
+    };
+}
+let counter = createCounter();
+console.log("Counter:", counter()); // Counter: 1
+console.log("Counter:", counter()); // Counter: 2
+console.log("Counter:", counter()); // Counter: 3
+console.log("Counter:", counter()); // Counter: 4
+

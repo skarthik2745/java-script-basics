@@ -170,7 +170,7 @@ let productOfNumbers = numbers.reduce((accumulator, current) => accumulator * cu
 console.log("Product of [1, 2, 3, 4, 5]:", productOfNumbers); // Product of [1, 2, 3, 4, 5]: 120
 
 // arrow function with closure
-function createCounter() {
+let createCounter=()=>{
     let count = 0;
     return () => {
         count++;

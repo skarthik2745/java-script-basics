@@ -8,6 +8,7 @@ function greetUser(func) {
 }
 
 console.log(greetUser(greet)); // Hello, World!
+//========================================
 
 // setTimeout
 setTimeout(function(){
@@ -131,7 +132,7 @@ const numbersArray = [1, 2, 3, 4, 5];
 const doubledArray = numbersArray.map(num => num * 2);
 console.log("Doubled Array:", doubledArray); // Doubled Array: [2, 4, 6, 8, 10]
 
-const squareRoots = numbersArray.map(num => {
+const squareRoots = numbersArray.map((num) => {
     return Math.sqrt(num).toFixed(2); // Returns the square root of each number, rounded to 2 decimal places
 });
 console.table("Square Roots:", squareRoots); // Square Roots: [1, 1.4142135623730951, 1.7320508075688772, 2, 2.23606797749979]
@@ -147,6 +148,7 @@ console.table("Square Roots:", squareRoots); // Square Roots: [1, 1.414213562373
  ];
 
 
+ console.table(user)
     const userNames = user.map((user) => ({
        fname: user.full_name,
          age: user.age,
@@ -164,7 +166,7 @@ console.table("Square Roots:", squareRoots); // Square Roots: [1, 1.414213562373
 
     console.table(userName);
 
-    //======================================================
+    //==========================================================
 
     const d=[1, 2, 3, 4, 5];
     const doubled = d.map(num => num * 2);
@@ -201,7 +203,7 @@ console.table(combined2);
 // filtering an array
 
 const numbersArray2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const e=numbersArray2.map(num => num%2==0);
+const e=numbersArray2.map(num => num%2===0);
 console.log("Even Numbers:", e); // Even Numbers: [false, true, false, true, false, true, false, true, false, true]
 //===============================================
 
@@ -231,3 +233,4 @@ const user4= user3.map(user => ({
 }));
 console.table(user4); // Displays modified user details in a table format
 //========================================================
+

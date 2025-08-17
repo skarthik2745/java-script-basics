@@ -66,6 +66,7 @@ function welcome(name) {
   console.log("Welcome " + result); // Welcome No Name / Welcome Joes
 }
 welcome();
+console.log("--------")
 welcome(null);
 welcome("Joes");
 

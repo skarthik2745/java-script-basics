@@ -68,3 +68,18 @@ const s={name:'sk',age:'18'}
 console.table(s)
 s.name='ak'
 console.table(s);
+
+//-------------------------
+
+var a="hello"
+var a=90
+a=99
+
+let c="sk"
+//let c=99
+c=88
+
+const o=90
+//const o="sk"
+o=99
+console.log(o);

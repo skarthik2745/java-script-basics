@@ -53,7 +53,7 @@ console.log("Includes 'John':", full_name.includes("John")); // Includes 'John':
 console.log("Includes 'Jane':", full_name.includes("Jane")); // Includes 'Jane':    false   
 
 console.log("Repeat 3 times:", full_name.repeat(3)); // Repeat 3 times: John DoeJohn DoeJohn Doe
-console.log("Search for 'Doe':", full_name.search("Doe")); // Search for 'Doe': 5
+console.log("Search for 'Doe':", full_name.search("Doe")); // Search for 'Doe': 5 // -1
 
 // escaping
 
@@ -168,18 +168,4 @@ console.log("Sum of [1, 2, 3, 4, 5]:", sumOfNumbers); // Sum of [1, 2, 3, 4, 5]:
 
 let productOfNumbers = numbers.reduce((accumulator, current) => accumulator * current, 1);
 console.log("Product of [1, 2, 3, 4, 5]:", productOfNumbers); // Product of [1, 2, 3, 4, 5]: 120
-
-// arrow function with closure
-let createCounter=()=>{
-    let count = 0;
-    return () => {
-        count++;
-        return count;
-    };
-}
-let counter = createCounter();
-console.log("Counter:", counter()); // Counter: 1
-console.log("Counter:", counter()); // Counter: 2
-console.log("Counter:", counter()); // Counter: 3
-console.log("Counter:", counter()); // Counter: 4
 

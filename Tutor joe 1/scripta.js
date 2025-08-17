@@ -39,7 +39,8 @@ console.log(typeof student); // object
 
 // Date
 var d = new Date();
-console.log(typeof d); // object
+console.log(d);
+console.log(typeof d); // object/
 
 
 //Type Conversion
@@ -90,7 +91,7 @@ console.log(a, typeof a);
 a = "Tutor Joes";
 console.log(a, typeof a);
 a = Number(a);
-console.log(a, typeof a);
+console.log(a, typeof a);// NaN
 
 a = "35";
 console.log(a, typeof a);
@@ -100,7 +101,7 @@ console.log(a, typeof a);
 a = "35.55";
 console.log(a, typeof a);
 a = parseInt(a);
-console.log(a, typeof a);
+console.log(a, typeof a); //35  trunc
 
 a = "35.55";
 console.log(a, typeof a);

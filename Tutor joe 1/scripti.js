@@ -318,5 +318,55 @@ console.log("Cloned with concat:", clonedArray3);
 // Array.from()
 let clonedArray4 = Array.from(originalArray);
 console.log("Cloned with Array.from:", clonedArray4);
-//======================================================
+//=================================================================
 
+
+
+// Define reusable student methods
+const studentMethod = {
+  // Method to return student's name and city
+  about: function () {
+    return `${this.fullName} is from ${this.city}`;
+  },
+
+  // Method to check if student is eligible (age >= 18)
+  eligibility: function () {
+    return this.age >= 18;
+  },
+};
+
+// Function to create a new student object
+function addStudent(fullName, father, age, address, city) {
+  const user = {}; // Empty object
+
+  // Assign values
+  user.fullName = fullName;
+  user.father = father;
+  user.age = age;
+  user.address = address;
+  user.city = city;
+
+  // ✅ Assign methods (without calling them)
+  user.about = studentMethod.about;
+  user.eligibility = studentMethod.eligibility;
+
+  return user; // Return the final object
+}
+
+// Create three students
+const student1 = addStudent("Sam", "Raja", 25, "Gandhi Road", "Salem");
+const student2 = addStudent("Karthik", "Suresh", 17, "Anna Nagar", "Chennai");
+const student3 = addStudent("Priya", "Mohan", 20, "MG Street", "Coimbatore");
+
+// Print all students and test their methods
+console.log(student1);
+console.log(student1.about());        // "Sam is from Salem"
+console.log(student1.eligibility());  // true
+
+console.log(student2);
+console.log(student2.about());        // "Karthik is from Chennai"
+console.log(student2.eligibility());  // false
+
+console.log(student3);
+console.log(student3.about());        // "Priya is from Coimbatore"
+console.log(student3.eligibility());  // true

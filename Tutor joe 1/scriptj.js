@@ -214,3 +214,71 @@ const students = {
 students.fun1();
 
 //=================================================
+
+console.log("__________________________________________________")
+// destruction of array , obj
+
+//Before ES6
+/*
+const nums1 = [1, 2, 3, 4, 5];
+const first1 = nums1[0];
+const second1 = nums1[1];
+const rest1 = nums1.slice(2);
+console.log(first1);
+console.log(second1);
+console.log(rest1);
+*/
+
+//After ES6
+const nums2 = [1, 2, 3, 4, 5];
+const [first2, second2, ...rest2] = nums2;
+console.log(first2);
+console.log(second2);
+console.log(rest2);
+
+//Before ES6
+/*
+const obj1 = { name1: "Joes", age1: 30, gender1: "male" };
+const name1 = obj1.name1;
+const age1 = obj1["age1"];
+const gender1 = obj1.gender1;
+console.log(name1);
+console.log(age1);
+console.log(gender1);
+*/
+
+const obj2 = { name2: "Joes", age22: 30, gender2: "male" };
+const { name2, age22, gender2 } = obj2;
+console.log(name2);
+console.log(age22);
+console.log(gender2);
+
+//Using default values with array destructuring
+const nums3 = [1, 2];
+const [x1, y1, z1 = 3] = nums3;
+
+console.log(x1);
+console.log(y1);
+console.log(z1);
+
+const obj3 = { name3: "Joes", age3: 30 };
+const { name3, age3, gender3 = "Male" } = obj3;
+console.log(name3);
+console.log(age3);
+console.log(gender3);
+
+// swapping
+let a = 10;
+let b = 20;
+
+console.log("Before swap:");
+console.log("a =", a, "b =", b);
+
+// Swapping using array destructuring
+[a, b] = [b, a];
+
+console.log("After swap:");
+console.log("a =", a, "b =", b);
+
+// skipping unwanted values
+
